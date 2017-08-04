@@ -29,6 +29,26 @@ app.get('/article-three',function(req,res){
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
+var contentOne = {
+    title : 'Article One | Nihal Kaul',
+    heading : 'Article-one',
+    date : '4th August 2017',
+    content :
+    `
+             <p>
+                This is my content for article-one.This is my content for article-one.This is my content for article-one.
+                 </p>
+                 
+                   <p>
+                This is my content for article-one.This is my content for article-one.This is my content for article-one.
+             </p>
+                 
+              <p>
+                This is my content for article-one.This is my content for article-one.This is my content for article-one.
+             </p>
+    `
+};
+
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
