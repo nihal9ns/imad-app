@@ -18,7 +18,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/article-one',function(req,res){
-  res.send(createTemplate(article-one));
+  res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two',function(req,res){
@@ -29,7 +29,7 @@ app.get('/article-three',function(req,res){
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
-var contentOne = {
+var articleOne = {
     title : 'Article One | Nihal Kaul',
     heading : 'Article-one',
     date : '4th August 2017',
