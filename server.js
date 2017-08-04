@@ -33,7 +33,7 @@ app.get('/article-three',function(req,res){
 });
 
 var articles = {
-var 'article-one' : {
+ 'article-one' : {
     title : 'Article One | Nihal Kaul',
     heading : 'Article-One',
     date : '4th August 2017',
@@ -52,7 +52,7 @@ var 'article-one' : {
              </p>
     `
 },
-var 'article-two' : {
+ 'article-two' : {
      title : 'Article Two | Nihal Kaul',
     heading : 'Article-Two',
     date : '4th August 2017',
@@ -71,7 +71,7 @@ var 'article-two' : {
              </p>
     `
 },
-var 'article-three' : {
+ 'article-three' : {
        title : 'Article Three | Nihal Kaul',
     heading : 'Article-Three',
     date : '4th August 2017',
@@ -86,9 +86,8 @@ var 'article-three' : {
                  
               <p>
              This is my content for article-three.This is my content for article-three.This is my content for article-three.
-             </p>
+             </p>`
     }
-
 };
 
 function createTemplate (data){
