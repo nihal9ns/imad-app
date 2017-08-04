@@ -17,8 +17,11 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-app.get('/article-one',function(req,res){
-  res.send(createTemplate(articleOne));
+app.get('/:articleName',function(req,res){
+    //articleName = article-one
+    //articles[articleName] = {} content object for artice-one
+    var articleName = req.params.articleName;
+  res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two',function(req,res){
@@ -29,9 +32,10 @@ app.get('/article-three',function(req,res){
   res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
 });
 
-var articleOne = {
+var articles = {
+var 'article-one' : {
     title : 'Article One | Nihal Kaul',
-    heading : 'Article-one',
+    heading : 'Article-One',
     date : '4th August 2017',
     content :
     `
@@ -47,6 +51,44 @@ var articleOne = {
                 This is my content for article-one.This is my content for article-one.This is my content for article-one.
              </p>
     `
+},
+var 'article-two' : {
+     title : 'Article Two | Nihal Kaul',
+    heading : 'Article-Two',
+    date : '4th August 2017',
+    content :
+    `
+                 <p>
+                This is my content for article-two.This is my content for article-two.This is my content for article-two.
+                 </p>
+                 
+                   <p>
+                This is my content for article-two.This is my content for article-two.This is my content for article-two.
+             </p>
+                 
+              <p>
+                This is my content for article-two.This is my content for article-two.This is my content for article-two.
+             </p>
+    `
+},
+var 'article-three' : {
+       title : 'Article Three | Nihal Kaul',
+    heading : 'Article-Three',
+    date : '4th August 2017',
+    content :
+    `       <p>
+                This is my content for article-three.This is my content for article-three.This is my content for article-three.
+                 </p>
+                 
+                   <p>
+             This is my content for article-three.This is my content for article-three.This is my content for article-three
+             </p>
+                 
+              <p>
+             This is my content for article-three.This is my content for article-three.This is my content for article-three.
+             </p>
+    }
+
 };
 
 function createTemplate (data){
@@ -58,8 +100,7 @@ function createTemplate (data){
     `<html>
     <head>
         <title>
-           ${title}
-        </title>
+           ${title}  </title>
         <meta name="viewport" content="width=device-width , initial-scale=1" />
         <link href="/ui/style.css" rel="stylesheet" />
     </head>
