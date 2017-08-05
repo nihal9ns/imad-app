@@ -5,7 +5,7 @@ var element = document.getElementById('main-text')
 //element.innerHTML='Edited text'
 
 //edit image madi
-var img = document.getElementById('madi')
+/*var img = document.getElementById('madi')
 var marginLeft = 0;
 function moveRight(){
     marginLeft = marginLeft + 1;
@@ -14,4 +14,4 @@ function moveRight(){
 }
 img.onclick = function(){
     var interval = setInterval(moveRight,50);
-}
+} */
