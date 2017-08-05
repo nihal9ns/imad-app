@@ -28,6 +28,12 @@ app.get('/:articleName',function(req,res){
   res.send(createTemplate(articles[articleName]));
 });
 
+var counter = 0;
+app.get('/counter', function (req, res) {
+    counter = counter + 1;
+    res.send(counter.toString());
+});
+
 /*app.get('/article-two',function(req,res){
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
 });
