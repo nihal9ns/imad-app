@@ -6,6 +6,6 @@ element.innerHTML='Edited text'
 
 //edit image madi
 var img = document.getElementById('madi')
-img.onClick = function(){
+img.onclick = function(){
     img.style.marginLeft='100px';
 }
