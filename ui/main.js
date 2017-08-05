@@ -24,7 +24,7 @@ button.onclick = function(){
     var span = document.getElementById('count');
     span.innerHTML = counter.toString();
 }; */
-
+var button = document.getElementById('counter');
 button.onclick = function(){
 
 //create a request object
