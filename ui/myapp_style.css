@@ -5,11 +5,10 @@ body {
      background-image: url("http://fungyung.com/data/out/123/63857925-web-wallpapers.png");
     background-repeat: no-repeat;
     background-size:cover;
-    text-align: left;
 }
 
 .center {
-    text-align: left;
+    text-align: center;
 }
 
 .text-big {
@@ -33,5 +32,15 @@ body {
                     padding-right: 20px;
 }
 
+h3{
+    text-align:center;
+}
 
+h4{
+        text-align:center;
+}
+
+p{
+        text-align:center;
+}
 
