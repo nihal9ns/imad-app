@@ -3,6 +3,8 @@ body {
     font-family: sans-serif;
     margin-top: 60px;
      background-image: url("https://lh3.googleusercontent.com/r7q_QixaHG4DMaR09hLqUKu1GgtbuPyPPIG_ii9C8yGHG0i0eQifm4ACbUsfbchZISB9Hzibrg=w640-h400-e365");
+       background-size: 80px 60px;
+    background-repeat: no-repeat;
 }
 
 .center {
