@@ -70,9 +70,9 @@ app.get('/counter', function (req, res) {
 //Name list
 
 names = [];
-app.get('/submit-btn/:name',function(req,res){
+app.get('/submit-name',function(req,res){ //URL : /submit-name?name=xxxxx
     //Get the name from the request
-    var name = req.params.name;
+    var name = req.query.name;
     names.push(name);
     res.send(JSON.stringify(names));
 });
