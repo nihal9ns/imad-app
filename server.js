@@ -70,11 +70,11 @@ app.get('/counter', function (req, res) {
 //Name list
 
 names = [];
-app.get('/submit-btn',function(req,res){
+app.get('/submit-btn/:name',function(req,res){
     //Get the name from the request
-    var name;
+    var name = req.params.name;
     names.push(name);
-    res.send(names);
+    res.send(JSON.stringify(names));
 });
 
 
