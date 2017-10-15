@@ -67,6 +67,16 @@ app.get('/counter', function (req, res) {
     res.send(counter.toString());
 });
 
+//Name list
+
+names = [];
+app.get('/submit-btn',function(req,res){
+    //Get the name from the request
+    var name;
+    names.push(name);
+    res.send(names);
+});
+
 
 
 /*app.get('/article-two',function(req,res){
