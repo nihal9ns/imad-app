@@ -54,6 +54,16 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+//Name list
+
+names = [];
+app.get('/submit-name',function(req,res){ //URL : /submit-name?name=xxxxx
+    //Get the name from the request
+    var name = req.query.name;
+    names.push(name);
+    res.send(JSON.stringify(names));
+});
+
 app.get('/:articleName',function(req,res){
     //articleName = article-one
     //articles[articleName] = {} content object for artice-one
@@ -67,15 +77,7 @@ app.get('/counter', function (req, res) {
     res.send(counter.toString());
 });
 
-//Name list
 
-names = [];
-app.get('/submit-name',function(req,res){ //URL : /submit-name?name=xxxxx
-    //Get the name from the request
-    var name = req.query.name;
-    names.push(name);
-    res.send(JSON.stringify(names));
-});
 
 
 
