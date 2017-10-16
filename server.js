@@ -18,6 +18,17 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
+function hash(input){
+    //How do we create a hash?
+}
+
+app.get('/hash/:input',function(req,res){
+    var hashedString = hash(req.params.input);
+    res.send(hashedString);
+});
+
+
 var pool = new Pool(config);
 
 
