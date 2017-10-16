@@ -44,6 +44,9 @@ app.post('/create-user',function(req,res){
    //username,password 
    //{"username" : "nihal","password" : "password"}
    //JSON
+   
+   //CURL : 
+   /* curl -v -XPOST -H 'Content-Type: application/json' --data '{"username":"nihal","password":"password"}' http://nihal9ns.imad.hasura-app.io/create-user */
    var username = req.body.username;
    var password = req.body.password;
    var salt = crypto.randomBytes(128).toString('hex');
