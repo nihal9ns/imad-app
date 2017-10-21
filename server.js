@@ -5,7 +5,7 @@ var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-
+// pg database integration
 var Pool = require('pg').Pool;
 var config = {
     user:'nihal9ns',
@@ -27,7 +27,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-
+// Crypto
 function hash(input,salt){
     //How do we create a hash?
     var hashed = crypto.pbkdf2Sync(input,salt,10000,512,'sha512');
@@ -149,8 +149,14 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-//Name list
+// Counter 
+var counter = 0;
+app.get('/counter', function (req, res) {
+    counter = counter + 1;
+    res.send(counter.toString());
+});
 
+//Name list
 names = [];
 app.get('/submit-name',function(req,res){ //URL : /submit-name?name=xxxxx
     //Get the name from the request
@@ -159,22 +165,13 @@ app.get('/submit-name',function(req,res){ //URL : /submit-name?name=xxxxx
     res.send(JSON.stringify(names));
 });
 
+// Article
 app.get('/:articleName',function(req,res){
     //articleName = article-one
     //articles[articleName] = {} content object for artice-one
     var articleName = req.params.articleName;
   res.send(createTemplate(articles[articleName]));
 });
-
-var counter = 0;
-app.get('/counter', function (req, res) {
-    counter = counter + 1;
-    res.send(counter.toString());
-});
-
-
-
-
 
 /*app.get('/article-two',function(req,res){
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
