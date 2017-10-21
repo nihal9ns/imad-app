@@ -1,4 +1,3 @@
-var express = require('express');
 //-------------------------------------------------------------------------------------------------
 //Login
 //-------------------------------------------------------------------------------------------------
@@ -194,28 +193,7 @@ submit_name.onclick = function(){
 //-------------------------------------------------------------------------------------------------
 //Select from Student
 //-------------------------------------------------------------------------------------------------
-// pg database integration
-var Pool = require('pg').Pool;
-var config = {
-    user:'nihal9ns',
-    database:'nihal9ns',
-    host:'db.imad.hasura-app.io',
-    password:process.env.DB_PASSWORD,
-    port:'5432'
-};
 
-var btn_select = document.getElementById('btn_select');
-btn_select.onclick = function(){
-    var pool = new Pool(config);
-     pool.query('SELECT * FROM "student"',function(err,result){
-            if(err){
-                console.log(res.status(500).send(err.toString()));
-            }
-            else{
-                console.log(res.send(JSON.stringify(result.rows)));
-            }
-    });
-};
 
 
 
