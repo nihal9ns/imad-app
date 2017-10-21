@@ -5,6 +5,11 @@ var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+
+//----------------------------------------------------------------
+// Basic Blog App
+//----------------------------------------------------------------
+
 app.get('/blog.css',function(req,res){
    res.sendFile(path.join(__dirname,'ui','blog.css')); 
 });
