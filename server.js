@@ -170,7 +170,7 @@ app.get('/submit-name',function(req,res){ //URL : /submit-name?name=xxxxx
 // Basic Blog App
 //----------------------------------------------------------------
 
-app.get('/blog.css',function(req,res){
+app.get('/ui/blog.css',function(req,res){
    res.sendFile(path.join(__dirname,'ui','blog.css')); 
 });
 
@@ -178,7 +178,7 @@ app.get('/blog',function(req,res){
    res.sendFile(path.join(__dirname,'ui','blog.html')); 
 });
 
-app.get('/blog.js',function(req,res){
+app.get('/ui/blog.js',function(req,res){
    res.sendFile(path.join(__dirname,'ui','blog.js')); 
 });
 
