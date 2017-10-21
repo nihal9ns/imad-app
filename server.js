@@ -134,7 +134,7 @@ app.get('/test-db-insert/:id/:name/:course/:marks',function(req,res){
 app.get('/test-db-select',function(req,res){
    pool.query('SELECT * FROM "student"',function(err,result){
         if(err){
-            res.status(500).send(err.toSrting());
+            res.status(500).send(err.toString());
         }
         else{
             res.send('JSON.stringify(result.rows)');
@@ -149,7 +149,7 @@ app.get('/test-db', function (req, res) {
     //return a response with the results
     pool.query('SELECT * FROM test',function(err,result){
         if(err){
-            res.status(500).send(err.toSrting());
+            res.status(500).send(err.toString());
         }
         else{
             res.send('JSON.stringify(result.rows)');
