@@ -5,6 +5,46 @@ var crypto = require('crypto');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+app.get('/blog.css',function(req,res){
+   res.sendFile(path.join(__dirname,'ui','blog.css')); 
+});
+
+app.get('/blog',function(req,res){
+   res.sendFile(path.join(__dirname,'ui','blog.html')); 
+});
+
+app.get('/blog.js',function(req,res){
+   res.sendFile(path.join(__dirname,'ui','blog.js')); 
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // pg database integration
 var Pool = require('pg').Pool;
 var config = {
