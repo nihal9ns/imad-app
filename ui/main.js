@@ -132,13 +132,45 @@ btn_counter.onclick = function(){
               span.innerHTML = counter.toString();
           }
       }
-      // Do something
+      // Do nothing
     };
     // Make the request
     request.open('GET','http://nihal9ns.imad.hasura-app.io/counter',true);
     request.send(null);
 };
 
+//-------------------------------------------------------------------------------------------------
+//Name list
+//-------------------------------------------------------------------------------------------------
+
+var submit_name = document.getElementById('submit_name');
+submit_name.onclick = function(){
+    // Create a request
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+            if(request.status === 200){
+                // Take some action
+                // Capture a list of names and render it as a list
+                var names = request.responseText;
+                names = JSON.parse(names);
+                var list = '';
+                for(var i = 0; i < names.length; i++){
+                    list = list + '<li>' + names[i] + '</li>';
+                }
+                
+                var ul = document.getElementById('namelist');
+                ul.innerHTML = list;
+            }
+        }
+        // Do nothing
+    };
+    // Make a request
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;
+    request.open('GET','http://nihal9ns.imad.hasura-app.io/submit-name?name='+name,true);
+    request.send(null);
+};
 
 
 
