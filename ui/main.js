@@ -155,7 +155,7 @@ submit_name.onclick = function(){
     for(var i=0;i<names.length;i++){
         list = list + '<li>' + names[i] + '</li>';
     }
-    var ul = document.getElementByid('namelist');
+    var ul = document.getElementById('namelist');
     ul.innerHTML = list;
 };
 
