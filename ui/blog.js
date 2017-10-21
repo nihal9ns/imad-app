@@ -11,7 +11,7 @@ var pool = new Pool(config);
 
 var username = document.getElementById('username');
 var password = docuent.getElementById('password');
-var btn_register = docuent.getElementById('btn_register');
+var btn_register = document.getElementById('btn_register');
 btn_register.onclick = function(){
     // Create a request
    // var request = new XMLHttpRequest();
