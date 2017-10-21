@@ -143,7 +143,28 @@ btn_counter.onclick = function(){
 //Name list
 //-------------------------------------------------------------------------------------------------
 
+// Basic code
+
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
 var submit_name = document.getElementById('submit_name');
+submit_name.onclick = function(){
+    var list = '';
+    var name = document.getElementById('name');
+    list = name.push();
+    for(var i=0;i<name.length;i++){
+        list = list + '<li>' + name[i] + '</li>';
+    }
+    var ul = document.getElementByid('namelist');
+    ul.innerHTML = list;
+};
+
+
+
+
+//AJAX implementation (API Endpoint)
+
+/*var submit_name = document.getElementById('submit_name');
 submit_name.onclick = function(){
     // Create a request
     var request = new XMLHttpRequest();
@@ -171,7 +192,7 @@ submit_name.onclick = function(){
     request.open('GET','http://nihal9ns.imad.hasura-app.io/submit-name?name='+name,true);
     request.send(null);
 };
-
+*/
 
 
 
