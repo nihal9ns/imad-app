@@ -145,15 +145,15 @@ btn_counter.onclick = function(){
 
 // Basic code
 
-
+var names = [];
 var submit_name = document.getElementById('submit_name');
 submit_name.onclick = function(){
     var list = '';
     var nameInput = document.getElementById('name');
     var name = nameInput.value;
-    list.push(name);
-    for(var i=0;i<name.length;i++){
-        list = list + '<li>' + name[i] + '</li>';
+    names.push(name);
+    for(var i=0;i<names.length;i++){
+        list = list + '<li>' + names[i] + '</li>';
     }
     var ul = document.getElementByid('namelist');
     ul.innerHTML = list;
