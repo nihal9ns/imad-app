@@ -35,6 +35,20 @@ request.onreadystatechange = function(){
 };
 
 
+//-------------------------------------------------------------------------------------------------
+//Addition
+//-------------------------------------------------------------------------------------------------
+
+var sum = 0;
+var btn = document.getElementById('btn_add');
+btn.onclick = function(){
+    var num1 = parseInt(document.getElementById('num1').value);
+    var num2 = parseInt(document.getElementById('num2').value);
+    sum = num1 + num2;
+    var span = document.getElementById('result');
+    result.innerHTML = sum.toString();
+};
+
 
 
 
