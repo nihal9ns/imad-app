@@ -1,3 +1,14 @@
+// pg database integration
+var Pool = require('pg').Pool;
+var config = {
+    user:'nihal9ns',
+    database:'nihal9ns',
+    host:'db.imad.hasura-app.io',
+    password:process.env.DB_PASSWORD,
+    port:'5432'
+};
+var pool = new Pool(config);
+
 var username = document.getElementById('username');
 var password = docuent.getElementById('password');
 var btn_register = docuent.getElementById('btn_register');
