@@ -166,6 +166,24 @@ app.get('/submit-name',function(req,res){ //URL : /submit-name?name=xxxxx
     res.send(JSON.stringify(names));
 });
 
+//----------------------------------------------------------------
+// Basic Blog App
+//----------------------------------------------------------------
+
+app.get('/blog.css',function(req,res){
+   res.sendFile(path.join(__dirname,'ui','blog.css')); 
+});
+
+app.get('/blog',function(req,res){
+   res.sendFile(path.join(__dirname,'ui','blog.html')); 
+});
+
+app.get('/blog.js',function(req,res){
+   res.sendFile(path.join(__dirname,'ui','blog.js')); 
+});
+
+//-----------------------------------------------------------------
+
 // Article
 app.get('/:articleName',function(req,res){
     //articleName = article-one
@@ -277,21 +295,7 @@ return htmlTemplate;
 
 
 
-//----------------------------------------------------------------
-// Basic Blog App
-//----------------------------------------------------------------
 
-app.get('/blog.css',function(req,res){
-   res.sendFile(path.join(__dirname,'ui','blog.css')); 
-});
-
-app.get('/blog',function(req,res){
-   res.sendFile(path.join(__dirname,'ui','blog.html')); 
-});
-
-app.get('/blog.js',function(req,res){
-   res.sendFile(path.join(__dirname,'ui','blog.js')); 
-});
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
