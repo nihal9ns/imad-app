@@ -20,7 +20,7 @@ btn_register.onclick = function(){
           //  if(request.status === 200){
                 pool.query('INSERT into "login" (username,password) VALUES ($1,$2)',[username,password],function(err,result){
                     if(err){
-                        res.status(500).send(err.toSrting());
+                        res.status(500).send(err.toString());
                     }
                     else{
                         res.send('User successfully created ' +username);
