@@ -108,13 +108,36 @@ btn_mod.onclick = function(){
 //-------------------------------------------------------------------------------------------------
 //Counter
 //-------------------------------------------------------------------------------------------------
-
+/* Basic code
 var counter = 0;
 var btn_counter = document.getElementById('btn_counter');
 btn_counter.onclick = function(){
   counter = counter + 1;
   var span = document.getElementById('span_count');
   span.innerHTML = counter.toString();
+}; */
+
+//AJAX implementation (API Endpoint)
+
+var counter = 0;
+var btn_counter = document.getElementById('btn_counter');
+btn_counter.onclick = function(){
+    // Create a request
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function(){
+      if(request.readystate === XMLHttpRequest.DONE){
+          // Take some action
+            counter = counter + 1;
+            var span = document.getElementById('span_count');
+            span.innerHTML = counter.toString();
+      }else{
+       // Do something   
+      }
+    };
+    // Make the request
+    request.open('GET','http://nihal9ns.imad.hasura-app.io/counter',true);
+    request.send(null);
+    
 };
 
 
