@@ -125,7 +125,7 @@ btn_counter.onclick = function(){
     // Create a request
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
-      if(request.readystate === XMLHttpRequest.DONE){
+      if(request.readyState === XMLHttpRequest.DONE){
           // Take some action
             counter = counter + 1;
             var span = document.getElementById('span_count');
