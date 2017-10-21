@@ -64,7 +64,7 @@ app.post('/create-user',function(req,res){
 app.get('/login',function(req,res){
      var username = req.body.username;
      var password = req.body.password;
-      pool.query('SELECT * FROM "login" username = $1',[username],function(err,result){
+      pool.query('SELECT * FROM "login" WHERE username = $1',[username],function(err,result){
             if(err){
                 res.status(500).send(err.toSrting());
             }
@@ -73,8 +73,15 @@ app.get('/login',function(req,res){
                     res.send(403).send('username/password is invalid!');
                 }else{
                     // Match the password
-                    
-                     res.send('User successfully created ' +username);
+                    var dbString = result.rows[0].password;
+                    var salt = dbString.split('$')[2];
+                    var hashedPassword = hash(password,salt); // Creating a hash based on the password submitted and the original salt
+                    if(hashedPassword === dbString){
+                        res.send('Credential\'s Correct!!!');
+                    }
+                    else{
+                        res.send(403).send('username/password is invalid!');
+                    }
                 }
             }
     });
