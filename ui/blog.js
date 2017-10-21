@@ -9,8 +9,7 @@ var config = {
 };
 var pool = new Pool(config);
 
-var username = document.getElementById('username');
-var password = docuent.getElementById('password');
+
 var btn_register = document.getElementById('btn_register');
 btn_register.onclick = function(){
     // Create a request
@@ -18,6 +17,8 @@ btn_register.onclick = function(){
   //  request.onreadystatechange = function(){
     //    if(request.readyState === XMLHttpRequest.DONE){
           //  if(request.status === 200){
+                var username = document.getElementById('username');
+                var password = docuent.getElementById('password');
                 pool.query('INSERT into "login" (username,password) VALUES ($1,$2)',[username,password],function(err,result){
                     if(err){
                         res.status(500).send(err.toString());
