@@ -116,8 +116,19 @@ app.get('/logout',function(req,res){
 
 var pool = new Pool(config);
 
-app.get('/test-db-insert',function(req,res){
-   pool.query('INSERT into ') 
+app.get('/test-db-insert/:id/:name/:course/:marks',function(req,res){
+    var id = req.params.id;
+    var name = req.params.name;
+    var course = req.params.course;
+    var marks = req.params.marks;
+   pool.query('INSERT INTO "student" (id,name,course,marks) VALUES ($1,$2,$3,$4)',[id,name,course,marks],function(err,result){
+        if(err){
+            res.status(500).send(err.toSrting());
+        }
+        else{
+            res.send('Value successfully inserted '+id);
+        }
+   });
 });
 
 app.get('/test-db', function (req, res) {
