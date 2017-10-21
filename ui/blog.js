@@ -3,11 +3,11 @@ var password = docuent.getElementById('password');
 var btn_register = docuent.getElementById('btn_register');
 btn_register.onclick = function(){
     // Create a request
-    var request = new XMLHttpRequest();
-    request.onreadystatechange = function(){
-        if(request.readyState === XMLHttpRequest.DONE){
-            if(request.status === 200){
-                pool.query('INSERT into "login" (username,password) VALUES ($1,$2)',[username,dbString],function(err,result){
+   // var request = new XMLHttpRequest();
+  //  request.onreadystatechange = function(){
+    //    if(request.readyState === XMLHttpRequest.DONE){
+          //  if(request.status === 200){
+                pool.query('INSERT into "login" (username,password) VALUES ($1,$2)',[username,password],function(err,result){
                     if(err){
                         res.status(500).send(err.toSrting());
                     }
@@ -15,9 +15,12 @@ btn_register.onclick = function(){
                         res.send('User successfully created ' +username);
                     }
                 });
-            }
-        }
-    };
+     //       }
+     //   }
+        // Do nothing
+//};
+    // Make the request
+    
 };
 /*
 // pg database integration
