@@ -152,7 +152,7 @@ app.get('/test-db', function (req, res) {
             res.status(500).send(err.toSrting());
         }
         else{
-            res.send(JSON.stringify(result.rows));
+            res.send('JSON.stringify(result.rows)');
         }
     });
 });
