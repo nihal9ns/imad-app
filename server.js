@@ -116,6 +116,9 @@ app.get('/logout',function(req,res){
 
 var pool = new Pool(config);
 
+app.get('/test-db-insert',function(req,res){
+   pool.query('INSERT into ') 
+});
 
 app.get('/test-db', function (req, res) {
     //make a select request
@@ -292,11 +295,6 @@ function createTemplate (data){
 
 return htmlTemplate;
 }
-
-
-
-
-
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
