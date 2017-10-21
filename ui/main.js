@@ -105,6 +105,19 @@ btn_mod.onclick = function(){
     span.innerHTML = mod.toString();
 };
 
+//-------------------------------------------------------------------------------------------------
+//Counter
+//-------------------------------------------------------------------------------------------------
+
+var counter = 0;
+var btn_counter = document.getElementById('btn_counter');
+btn_counter.onclick = function(){
+  counter = counter + 1;
+  var span = document.getElementById('span_counter');
+  span.innerHTML = counter.toString();
+};
+
+
 
 
 
