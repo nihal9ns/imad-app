@@ -113,7 +113,7 @@ var counter = 0;
 var btn_counter = document.getElementById('btn_counter');
 btn_counter.onclick = function(){
   counter = counter + 1;
-  var span = document.getElementById('span_counter');
+  var span = document.getElementById('span_count');
   span.innerHTML = counter.toString();
 };
 
