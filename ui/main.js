@@ -40,13 +40,69 @@ request.onreadystatechange = function(){
 //-------------------------------------------------------------------------------------------------
 
 var sum = 0;
-var btn = document.getElementById('btn_add');
-btn.onclick = function(){
+var btn_add = document.getElementById('btn_add');
+btn_add.onclick = function(){
     var num1 = parseInt(document.getElementById('num1').value);
     var num2 = parseInt(document.getElementById('num2').value);
     sum = num1 + num2;
     var span = document.getElementById('result');
-    result.innerHTML = sum.toString();
+    span.innerHTML = sum.toString();
+};
+
+//-------------------------------------------------------------------------------------------------
+//Subtraction
+//-------------------------------------------------------------------------------------------------
+
+var sub = 0;
+var btn_sub = document.getElementById('btn_sub');
+btn_sub.onclick = function(){
+    var num1 = parseInt(document.getElementById('num1').value);
+    var num2 = parseInt(document.getElementById('num2').value);
+    sub = num1 - num2;
+    var span = document.getElementById('result_sub');
+    span.innerHTML = sub.toString();
+};
+
+//-------------------------------------------------------------------------------------------------
+//Multiplication
+//-------------------------------------------------------------------------------------------------
+
+var mul = 0;
+var btn_mul = document.getElementById('btn_mul');
+btn_mul.onclick = function(){
+    var num1 = parseInt(document.getElementById('num1').value);
+    var num2 = parseInt(document.getElementById('num2').value);
+    mul = num1 * num2;
+    var span = document.getElementById('result_mul');
+    span.innerHTML = mul.toString();
+};
+
+//-------------------------------------------------------------------------------------------------
+//Division
+//-------------------------------------------------------------------------------------------------
+
+var div = 0;
+var btn_div = document.getElementById('btn_div');
+btn_div.onclick = function(){
+    var num1 = parseInt(document.getElementById('num1').value);
+    var num2 = parseInt(document.getElementById('num2').value);
+    div = num1 / num2;
+    var span = document.getElementById('result_div');
+    span.innerHTML = div.toString();
+};
+
+//-------------------------------------------------------------------------------------------------
+//Modulus
+//-------------------------------------------------------------------------------------------------
+
+var mod = 0;
+var btn_mod = document.getElementById('btn_mod');
+btn_mod.onclick = function(){
+    var num1 = parseInt(document.getElementById('num1').value);
+    var num2 = parseInt(document.getElementById('num2').value);
+    mod = num1 % num2;
+    var span = document.getElementById('result_mod');
+    span.innerHTML = mod.toString();
 };
 
 
