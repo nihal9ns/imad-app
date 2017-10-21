@@ -21,7 +21,7 @@ request.onreadystatechange = function(){
                   alert('something went wrong on the server...');
               }
             }
-        }
+        
          //not done yet
     };
     //make the response
